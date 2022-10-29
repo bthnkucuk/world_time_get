@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 import 'package:world_time_get/home/controller/home_controller.dart';
 import 'package:world_time_get/selected_country/selected_country_screen.dart';
+import 'package:world_time_get/theme/theme_controller.dart';
 
 import '../../state/state.dart';
 
 part '../widget/arrow_card.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeController = ThemeController();
+
     return Scaffold(
       body: Obx(
         () => Column(
@@ -47,10 +50,16 @@ class HomeView extends GetView<HomeController> {
                                     .copyWith(fontWeight: FontWeight.w500),
                               ),
                               const Spacer(),
-                              CircleAvatar(
-                                  radius: 20,
-                                  backgroundColor:
-                                      Theme.of(context).buttonColor),
+                              GestureDetector(
+                                onTap: () {
+                                  Get.changeTheme(
+                                      themeController.changeThemee());
+                                },
+                                child: CircleAvatar(
+                                    radius: 20,
+                                    backgroundColor:
+                                        Theme.of(context).buttonColor),
+                              ),
                             ],
                           ),
                           Text(

@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder(
       init: HomeController(),
-      builder: (_) => const HomeView(),
+      builder: (_) => HomeView(),
     );
   }
 }

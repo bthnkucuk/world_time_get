@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:world_time_get/home/home_screen.dart';
 import 'package:world_time_get/theme/theme.dart';
+import 'package:world_time_get/theme/theme_controller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +14,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final themeController = ThemeController();
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: themeController.appThemeMode.value,
       home: const HomeScreen(),
     );
   }
