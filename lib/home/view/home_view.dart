@@ -9,7 +9,7 @@ import '../../state/state.dart';
 part '../widget/arrow_card.dart';
 
 class HomeView extends GetView<HomeController> {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:world_time_get/home/home_screen.dart';
 import 'package:world_time_get/theme/theme.dart';
 import 'package:world_time_get/theme/theme_controller.dart';
