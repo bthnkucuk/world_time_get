@@ -58,7 +58,12 @@ class HomeView extends GetView<HomeController> {
                                 child: CircleAvatar(
                                     radius: 20,
                                     backgroundColor:
-                                        Theme.of(context).buttonColor),
+                                        Theme.of(context).buttonColor,
+                                    child: Icon(
+                                        themeController.appThemeMode.value ==
+                                                ThemeMode.light
+                                            ? Icons.light_mode
+                                            : Icons.dark_mode)),
                               ),
                             ],
                           ),
